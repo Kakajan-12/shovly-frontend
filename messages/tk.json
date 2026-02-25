@@ -1,0 +1,81 @@
+{
+  "Header": {
+    "main": "Baş sahypa",
+    "tours": "Syýahatlar",
+    "about": "Biz barada",
+    "services": "Hyzmatlar",
+    "faq": "FAQ",
+    "contacts": "Kontaklar"
+  },
+  "About": {
+    "about-main-text": "Biz syýahatlaryňyzy ýönekeý, rahat we ýatdan çykmajak etmäge bagyşlanan syýahatçylyk agentligi. Maksadymyz syýahatyňyzyň her bir jikme-jikligine üns bermekdir, şonuň üçin siz hakykatdanam möhüm zatlara - täze ýerleri açmaga we tejribeden lezzet almaga üns berip bilersiňiz.\n\nBiz syýahat hyzmatlarynyň doly toplumyny hödürleýäris, şol sanda uçar biletlerini bronlamak, myhmanhana bronlamak, wiza kömegi we üns bilen saýlanan syýahatlar."
+
+
+  },
+  "Gallery": {
+    "gallery-title": "Ýatda galmaga mynasyp pursatlar",
+    "gallery-text": "Galereýamyzy öwreniň we hödürleýän ýatdan çykmajak tejribelerimize göz aýlaň. Ajaýyp peýzažlardan medeni başdan geçirmelere çenli, sizi garaşýan syýahatlara göz aýlaň we özüňizi her bir ýeriň merkezinde göz öňüne getiriň."
+  },
+  "Tour": {
+    "main-title": "BIZIŇ SYÝAHATLARYMYZA GÖZ AÝLAŇ",
+    "main-text": "Indiki başdan geçirmeleriňiz size garaşýar! Eksklýuziw syýahatlarymyzy öwreniň we diňe size laýyk gelýän ajaýyp dynç alyşy saýlaň."
+
+  },
+  "Footer": {
+    "text": "Her daşy bir hekaýa, her çägesi bir başdan geçirme, her güni bir açyş bolan ýurtda yz galdyryň.",
+    "contacts": "Kontaktlar",
+    "quick-links": "Gysga geçişler"
+  },
+
+  "WorkingHours": {
+    "title": "Iş wagty",
+    "working": "Işleýäris",
+    "notWorking": "Işlemeýäris",
+    "newYear": "Täze ýyl",
+    "womensDay": "Halkara zenanlar güni",
+    "novruz": "Nowruz baýramy",
+    "constitutionDay": "Türkmenistanyň Konstitusiýasy we Döwlet baýdagy güni",
+    "independenceDay": "Türkmenistanyň Garaşsyzlyk güni",
+    "neutralityDay": "Bitaraplyk güni"
+  },
+
+  "Weather": {
+    "title": "Aşgabatda howa",
+    "temperature": "Temperatura",
+    "description": "Beýany",
+    "sunny": "Güneşli",
+    "fetchError": "Howa maglumatlary ýüklenmedi",
+    "unavailable": "Howa maglumatlary elýeterli däl"
+  },
+
+  "Tours": {
+    "tours-title": "Biziň iň gowy gezelençlerimiz",
+    "tours-text": "Dünýäniň iň gözel burçlaryna rahatlyk bilen syýahat ediň. Gadymy şäherler, tebigy täsinlikler we ajaýyp medeni ugurlar - her bir gezelenç, tejribeli gollanmalar bilen bilelikde ýatdan çykmajak ýatlamalar üçin döredildi.",
+    "tours-price": "her adamdan",
+    "tours-booking": "Bronlamak",
+    "tours-route": "Syýahatyň ugurlary",
+    "tours-include": "Nämeler girýär",
+    "include": "Öz içine alýar",
+    "exclude": "Öz içine almaýar",
+    "gallery": "Galereýa"
+  },
+
+
+  "Contacts": {
+    "title": "Başdan geçirmäge taýynmy? Biz saňa garaşýarys!",
+    "text": "Türkmenistanyň öwrenilmedik burçlaryndan syýahatyňyzy başlamak üçin toparymyz bilen habarlaşyň. Sorag bermek, gezelenç jikme-jikliklerini ara alyp maslahatlaşmak ýa-da diňe ylham almak isleýärsiňizmi? Biz bärde - ýazyň, jaň ediň ýa-da geliň!",
+    "name": "Adyňyz",
+    "surname": "Familiýaňyz",
+    "email": "Poçta",
+    "subject": "Mowzuk",
+    "message": "Hatyňyz",
+    "send": "Ugratmak"
+  },
+  "Pagination": {
+    "next": "Öňe",
+    "prev": "Yza"
+  },
+  "More": {
+    "read-more": "Giňişleýin"
+  }
+}

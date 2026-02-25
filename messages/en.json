@@ -1,0 +1,77 @@
+{
+  "Header": {
+    "main": "Main",
+    "tours": "Tours",
+    "about": "About us",
+    "services": "Services",
+    "faq": "FAQ",
+    "contacts": "Contacts"
+  },
+  "About": {
+    "about-main-text": "We are a travel agency dedicated to making your journeys simple, comfortable, and unforgettable. Our goal is to take care of every detail of your trip so you can focus on what truly matters — discovering new places and enjoying the experience.\nWe offer a full range of travel services, including flight bookings, hotel reservations, visa assistance, and carefully selected tours."
+
+  },
+  "Gallery": {
+    "gallery-title": "Moments Worth Remembering",
+    "gallery-text": "Explore our gallery and get a glimpse of the unforgettable experiences we offer. From stunning landscapes to cultural adventures, see the journeys that await you and imagine yourself in the heart of every destination."
+  },
+  "Tour": {
+    "main-title": "EXPLORE OUR TOURS",
+    "main-text": "Your next adventure awaits! Browse our exclusive tours and find the perfect getaway tailored just for you."
+
+  },
+  "Footer": {
+    "text": "Leave your mark in a country where every stone is a story, every dune an adventure, every day a discovery.",
+    "contacts": "Contacts",
+    "quick-links": "Quick links"
+  },
+  "WorkingHours": {
+    "title": "Working Hours",
+    "working": "Working",
+    "notWorking": "Not working",
+    "newYear": "New Year",
+    "womensDay": "International Women's Day",
+    "novruz": "Novruz Holiday",
+    "constitutionDay": "Constitution and State Flag Day of Turkmenistan",
+    "independenceDay": "Independence Day of Turkmenistan",
+    "neutralityDay": "Day of Neutrality"
+  },
+
+  "Weather": {
+    "title": "Weather in Ashgabat",
+    "temperature": "Temperature",
+    "description": "Description",
+    "sunny": "Sunny",
+    "fetchError": "Failed to load weather data",
+    "unavailable": "Weather data unavailable"
+  },
+
+  "Tours": {
+    "tours-title": "Our best tours",
+    "tours-text": "Discover carefully curated journeys to the most picturesque corners of the world. Ancient cities, natural wonders, and unique cultural itineraries—each tour is designed to provide you with an unforgettable experience, accompanied by experienced guides.",
+    "tours-price": "per person",
+    "tours-booking": "Booking tour",
+    "tours-route": "Route tour",
+    "tours-include": "Includes",
+    "include": "Include",
+    "exclude": "Exclude",
+    "gallery": "Gallery"
+  },
+   "Contacts": {
+    "title": "Ready for adventure? We're waiting for you!",
+    "text": "Contact our team to begin your journey through the unexplored corners of Turkmenistan. Want to ask a question, discuss tour details, or just get inspired? We're here—write, call, or come visit!",
+    "name": "Name",
+    "surname": "Surname",
+    "email": "Email",
+    "subject": "Subject",
+    "message": "Message",
+    "send": "Send"
+  },
+  "Pagination": {
+    "next": "Next",
+    "prev": "Prev"
+  },
+  "More": {
+    "read-more": "Read more"
+  }
+}

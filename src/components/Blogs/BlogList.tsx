@@ -1,9 +1,10 @@
 'use client';
 
 import Image from "next/image";
-import Link from "next/link";
+
 import { useEffect, useRef, useState } from "react";
 import {Blog} from "@/types/blog"
+import {Link} from "@/i18n/navigation";
 
 interface BlogsProps {
     blogs: Blog[];
@@ -58,7 +59,7 @@ const BlogList: React.FC<BlogsProps> = ({ blogs, loading, currentPage, setCurren
 
                     return (
                         <Link key={item.id} href={`/blogs/${item.id}`} className="group">
-                            <div className="border border-red-600 rounded-xl shadow hover:shadow-lg transition-transform transform hover:scale-105 bg-white overflow-hidden">
+                            <div className="border border-blue-900 rounded-xl shadow hover:shadow-lg transition-transform transform hover:scale-105 bg-white overflow-hidden">
                                 <Image
                                     src={imageUrl}
                                     alt={title.replace(/<\/?[^>]+(>|$)/g, "")}

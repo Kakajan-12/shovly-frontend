@@ -48,7 +48,7 @@ const Booking = ({tour}: { tour: Tour }) => {
             <div className="container px-2 mx-auto">
                 <section className="flex flex-col-reverse lg:flex-row py-10 lg:space-x-4">
                     <div
-                        className="flex flex-col lg:w-2/3 items-center lg:items-start"
+                        className="flex flex-col lg:w-1/2 items-center lg:items-start"
                     >
                         <Image
                             src={imageUrl}
@@ -57,7 +57,6 @@ const Booking = ({tour}: { tour: Tour }) => {
                             height={400}
                             className="w-full rounded-2xl object-cover shadow-lg"
                         />
-                        <p className="mt-6 leading-relaxed text-lg text-gray-700">{text}</p>
                     </div>
 
                     <div
@@ -77,11 +76,11 @@ const Booking = ({tour}: { tour: Tour }) => {
                         <div className="w-full space-y-2">
                             <div className="bg-[#FFFCFC] py-5 px-4 rounded-xl shadow-md space-y-2">
                                 <p>
-                                    <FaRegMap color="#A40000" className="inline mr-2"/>
+                                    <FaRegMap color="#2A4393" className="inline mr-2"/>
                                     {destination}
                                 </p>
                                 <p>
-                                    <MdOutlineAccessTime color="#A40000" className="inline mr-2"/>
+                                    <MdOutlineAccessTime color="#2A4393" className="inline mr-2"/>
                                     {duration}{" "}
                                     {lang === "ru"
                                         ? "дня"
@@ -91,13 +90,14 @@ const Booking = ({tour}: { tour: Tour }) => {
                                 </p>
 
                                 <p>
-                                    <HiTranslate color="#A40000" className="inline mr-2"/>
+                                    <HiTranslate color="#2A4393" className="inline mr-2"/>
                                     {language}
                                 </p>
                                 <p>
-                                    <VscTypeHierarchySub color="#A40000" className="inline mr-2"/>
+                                    <VscTypeHierarchySub color="#2A4393" className="inline mr-2"/>
                                     {type}
                                 </p>
+                                <p className="mt-6 leading-relaxed text-lg text-gray-700">{text}</p>
                             </div>
 
                         </div>

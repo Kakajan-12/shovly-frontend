@@ -30,7 +30,7 @@ const Header = () => {
     };
 
     return (
-        <header className="fixed top-5 lg:top-8 left-0 w-full z-50 px-4">
+        <header className="fixed top-5 lg:top-8 left-0 w-full z-60 px-4">
             <div className="container mx-auto flex justify-between items-center px-4 py-2 rounded-full shadow-md bg-white">
                 <Link href={`/${locale}`} className="cursor-pointer">
                     <Image src="/icon.png" alt="BN Tour logo" width={90} height={90} priority
@@ -43,6 +43,9 @@ const Header = () => {
                     </Link>
                     <Link href={`/${locale}/tours`} className="main-color font-raleway text-lg lg:text-xl">
                         {t('tours')}
+                    </Link>
+                    <Link href={`/${locale}/blogs`} className="main-color font-raleway text-lg lg:text-xl">
+                        {t('blogs')}
                     </Link>
                     <Link href={`/${locale}/services`} className="main-color font-raleway text-lg lg:text-xl">
                         {t('services')}
@@ -111,6 +114,10 @@ const Header = () => {
                     <Link href={`/${locale}/tours`} onClick={() => setIsMenuOpen(false)}
                           className="font-raleway main-color text-lg">
                         {t('tours')}
+                    </Link>
+                    <Link href={`/${locale}/blogs`} onClick={() => setIsMenuOpen(false)}
+                          className="font-raleway main-color text-lg">
+                        {t('blogs')}
                     </Link>
                     <Link href={`/${locale}/about`} onClick={() => setIsMenuOpen(false)}
                           className="font-raleway main-color text-lg">

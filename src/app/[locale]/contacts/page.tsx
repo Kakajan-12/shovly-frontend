@@ -1,11 +1,13 @@
 import ContactForm from "@/components/Contacts/ContactForm";
 import ContactDetails from "@/components/Contacts/ContactDetails";
 import Image from "next/image";
+import {useTranslations} from "next-intl";
 
 
 const Contact = () => {
+    const t =useTranslations('Contacts')
     return (
-        <section className="py-20 relative overflow-hidden my-container">
+        <section className="pb-20 pt-34 relative overflow-hidden my-container">
             <div className="absolute top-0 -right-40 h-full w-full pointer-events-none opacity-30">
                 <Image
                     src="/icon.png"
@@ -18,18 +20,19 @@ const Contact = () => {
             </div>
             <div className="container mx-auto px-4">
                 <div
-                    className="text-center space-y-6 max-w-4xl"
+                    className="space-y-6 max-w-4xl mb-4"
                 >
-                    <p className="">Contact</p>
 
-                    <h1 className="text-2xl md:text-4xl font-bold max-w-lg mx-auto">
-                        Get In Touch With Us
-                    </h1>
-                    <p className="text-[#2D1B0D] text-lg">We are here to help! If you have any questions or feedback,
-                        feel free to reach out to us.</p>
+                    <h4 className="text-2xl md:text-5xl font-extrabold text-blue-900">
+                        {t('title')}
+                    </h4>
+                    <p className="max-w-xl text-lg">{t('text')}</p>
                 </div>
-                <ContactForm/>
-                <ContactDetails/>
+                <div className="flex flex-col lg:flex-row gap-8">
+                    <ContactForm/>
+                    <ContactDetails/>
+                </div>
+
             </div>
         </section>
 

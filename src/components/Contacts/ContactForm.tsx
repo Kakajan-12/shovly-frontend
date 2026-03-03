@@ -91,10 +91,8 @@ const ContactForm = () => {
     };
 
     return (
-        <div>
-
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="w-full relative bg-white z-50">
+            <div className="grid grid-cols-1 gap-8">
                 <form
                     className="w-full max-w-8xl space-y-8"
                     onSubmit={handleSubmit}
@@ -107,7 +105,7 @@ const ContactForm = () => {
                             name="name"
                             placeholder={t('name')}
                             required
-                            className="w-full border border-[#848484] rounded-lg bg-transparent px-2 py-2 focus:outline-none transition"
+                            className="w-full border border-[#2A4393] rounded-lg bg-transparent px-2 py-2 focus:outline-none transition"
                         />
                         <input
                             type="text"
@@ -116,7 +114,7 @@ const ContactForm = () => {
                             name="surname"
                             placeholder={t('surname')}
                             required
-                            className="w-full border border-[#848484] rounded-lg px-2 py-2 focus:outline-none transition"
+                            className="w-full border border-[#2A4393] rounded-lg px-2 py-2 focus:outline-none transition"
                         />
                     </div>
                     <div className="flex flex-col sm:flex-row gap-6">
@@ -127,16 +125,16 @@ const ContactForm = () => {
                             name="email"
                             placeholder={t('email')}
                             required
-                            className="w-full border border-[#848484] bg-white rounded-lg px-2 py-2 focus:outline-none transition"
+                            className="w-full border border-[#2A4393] bg-white rounded-lg px-2 py-2 focus:outline-none transition"
                         />
                         <input
                             type="phone"
                             value={formData.phone}
                             onChange={handleChange}
                             name="phone"
-                            placeholder={t('phone')}
+                            placeholder={t('number')}
                             required
-                            className="w-full border border-[#848484] bg-white rounded-lg px-2 py-2 focus:outline-none transition"
+                            className="w-full border border-[#2A4393] bg-white rounded-lg px-2 py-2 focus:outline-none transition"
                         />
                     </div>
 
@@ -147,7 +145,7 @@ const ContactForm = () => {
                         name="message"
                         placeholder={t('message')}
                         required
-                        className="w-full h-64 text-start border border-[#848484] bg-white rounded-lg px-2 py-2 focus:outline-none transition"
+                        className="w-full h-64 text-start border border-[#2A4393] bg-white rounded-lg px-2 py-2 focus:outline-none transition"
                     />
 
                     <div className="flex flex-col items-center gap-2">
@@ -157,7 +155,7 @@ const ContactForm = () => {
                             name="captchaText"
                             value={formData.captchaText}
                             onChange={handleChange}
-                            className={`border py-2 px-3 rounded-md max-w-40 bg-white ${
+                            className={`border border-[#2A4393] py-2 px-3 rounded-md max-w-40 bg-white ${
                                     captchaError ? 'border-red-500' : ''
                                 }`}
                                 required
@@ -177,7 +175,7 @@ const ContactForm = () => {
                         <button
                             type="submit"
                             disabled={sending}
-                            className="lang-bg text-white font-semibold w-full py-3 rounded-lg"
+                            className="main-background text-white font-semibold w-full py-3 rounded-lg cursor-pointer"
                         >
                             {sending ? '...' : t('send')}
                         </button>

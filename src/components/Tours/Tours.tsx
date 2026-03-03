@@ -64,7 +64,8 @@ const Tours: React.FC<ToursProps> = ({ tours, loading, currentPage, setCurrentPa
 
                     return (
                         <Link key={item.id} href={`/tours/${item.id}`} className="group">
-                            <div className="border border-red-600 rounded-xl shadow hover:shadow-lg transition-transform transform hover:scale-105 bg-white overflow-hidden">
+                            <div
+                                className="h-full flex flex-col border-2 border-blue-900 rounded-xl shadow hover:shadow-lg transition-transform transform hover:scale-105 bg-white overflow-hidden">
                                 <Image
                                     src={imageUrl}
                                     alt={title.replace(/<\/?[^>]+(>|$)/g, "")}
@@ -75,22 +76,22 @@ const Tours: React.FC<ToursProps> = ({ tours, loading, currentPage, setCurrentPa
                                 <div className="px-6 py-5 space-y-4 text-gray-800">
                                     <p
                                         className="text-md sm:text-lg font-semibold line-clamp-2"
-                                        dangerouslySetInnerHTML={{ __html: title }}
+                                        dangerouslySetInnerHTML={{__html: title}}
                                     />
-                                    <div className="h-px w-full bg-gray-200"></div>
+                                    <div className="h-px w-full bg-blue-900"></div>
                                     <div className="flex flex-col items-start text-md font-medium space-y-2">
                                         {item.price !== null && (
                                             <p className="flex items-center gap-2">
-                                                <PiCurrencyDollarBold className="text-[#A40000]" />
+                                                <PiCurrencyDollarBold className="text-[#2A4393]"/>
                                                 {item.price}
                                             </p>
                                         )}
                                         <p className="flex items-center gap-2">
-                                            <FaRegCalendarAlt className="text-[#A40000]"/>
+                                            <FaRegCalendarAlt className="text-[#2A4393]"/>
                                             {duration} {lang === "ru" ? "дн." : lang === "tk" ? "gün" : "days"}
                                         </p>
                                         <p className="flex items-center gap-2 text-sm text-gray-600">
-                                            <IoPersonOutline className="text-[#A40000]" />
+                                            <IoPersonOutline className="text-[#2A4393]"/>
                                             {type}
                                         </p>
                                     </div>

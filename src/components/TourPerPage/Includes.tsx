@@ -1,7 +1,7 @@
 'use client';
 
-import { useEffect, useState } from "react";
-import { useTranslations, useLocale } from "next-intl";
+import {useEffect, useState} from "react";
+import {useTranslations, useLocale} from "next-intl";
 
 interface IncludeExclude {
     id: number;
@@ -19,7 +19,7 @@ interface IncludesProps {
 
 const stripHTML = (text: string) => text?.replace(/<[^>]*>/g, "") || "";
 
-const Includes: React.FC<IncludesProps> = ({ tour }) => {
+const Includes: React.FC<IncludesProps> = ({tour}) => {
     const t = useTranslations("Tours");
     const lang = useLocale();
 
@@ -60,7 +60,6 @@ const Includes: React.FC<IncludesProps> = ({ tour }) => {
     if (loading) return <div className="text-center py-10">Loading...</div>;
     if (error) return <div className="text-center text-red-500">{error}</div>;
 
-    // Исправленная функция для получения правильного ключа языка
     const getLangText = (item: IncludeExclude) => {
         switch (lang) {
             case 'ru':
@@ -73,38 +72,35 @@ const Includes: React.FC<IncludesProps> = ({ tour }) => {
     };
 
     return (
-        <div className="container mx-auto px-4">
-            <div className="">
-                <div className="flex items-start">
-                    <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-red-800 mb-6 text-start lg:text-left">
+        <div className="my-container lang-bg py-8">
+            <div className="container mx-auto px-4">
+                <div className="flex justify-center">
+                    <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-6 text-center">
                         {t("tours-include")}
                     </h2>
                 </div>
 
                 <div
-                    className="flex flex-col lg:flex-row gap-10 bg-cover bg-no-repeat"
-                    style={{
-                        backgroundImage: "url('/compas.webp')",
-                    }}
+                    className="flex flex-col lg:flex-row gap-10"
                 >
                     <div className="flex-1">
-                        <p className="text-3xl text-[#575757] font-bold mb-4 text-left lg:text-center">
+                        <p className="text-3xl text-white font-bold mb-4 text-center">
                             {t("include")}
                         </p>
-                        <ul className="list-disc pl-6 text-gray-700 lg:mx-20 space-y-2">
+                        <ul className="list-disc pl-6 text-white lg:mx-20 space-y-2">
                             {includesData.map((item, idx) => (
-                                <div key={idx} className="text-xl">
+                                <li key={idx} className="text-xl">
                                     {stripHTML(getLangText(item))}
-                                </div>
+                                </li>
                             ))}
                         </ul>
                     </div>
 
                     <div className="flex-1">
-                        <p className="text-3xl text-[#575757] font-bold mb-4 text-left lg:text-center">
+                        <p className="text-3xl text-white font-bold mb-4 text-center">
                             {t("exclude")}
                         </p>
-                        <ul className="list-disc pl-6 text-gray-700 lg:mx-20 space-y-2">
+                        <ul className="list-disc pl-6 text-white lg:mx-20 space-y-2">
                             {excludesData.map((item, idx) => (
                                 <li key={idx} className="text-xl">
                                     {stripHTML(getLangText(item))}
@@ -115,6 +111,7 @@ const Includes: React.FC<IncludesProps> = ({ tour }) => {
                 </div>
             </div>
         </div>
+
     );
 };
 

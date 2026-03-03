@@ -1,17 +1,15 @@
 import Image from "next/image";
 import Hotels from "@/components/Hotels/Hotels";
+import {useTranslations} from "next-intl";
 
 export default function Hotel() {
+    const t = useTranslations('Services')
     return (
         <div className="pt-30 md:pt-40 pb-10 relative overflow-hidden">
             <div className="my-container">
                 <div className="container mx-auto px-4 w-full w-1/2">
-                    <h4 className="font-raleway main-color font-extrabold text-2xl sm:text-3xl md:text-4xl pb-4">Handpicked
-                        Hotels for Every Journey</h4>
-                    <p className="font-nunito text-sm sm:text-base">Discover a world of comfort, style, and
-                        unforgettable experiences with our carefully selected hotels around the globe. From luxury
-                        resorts and boutique hotels to family-friendly stays and budget-smart options, we help you
-                        find the perfect accommodation for every type of trip.</p>
+                    <h4 className="font-raleway main-color font-extrabold text-2xl sm:text-3xl md:text-4xl pb-4">{t('hotel-main-title')}</h4>
+                    <p className="font-nunito text-sm sm:text-base">{t('hotel-main-text')}</p>
                 </div>
                 <div className="absolute top-0 md:-right-40 h-full w-full pointer-events-none opacity-30">
                     <Image

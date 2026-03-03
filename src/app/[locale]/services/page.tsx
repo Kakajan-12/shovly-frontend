@@ -1,7 +1,10 @@
 import {Link} from "@/i18n/navigation";
 import Image from "next/image";
+import {useTranslations} from "next-intl";
 
 export default function Services() {
+    const t =useTranslations('Services')
+    const m =useTranslations('More')
     return (
         <div>
             <div
@@ -9,10 +12,9 @@ export default function Services() {
                 style={{backgroundImage: "url('/services.jpg')"}}
             >
                 <div className="relative z-10 container mx-auto px-2 flex flex-col h-[450px] justify-center space-y-5">
-                    <h1 className="text-4xl md:text-5xl font-bold font-raleway">Our Services</h1>
+                    <h1 className="text-4xl md:text-5xl font-bold font-raleway">{t('title')}</h1>
                     <p className="text-lg max-w-2xl font-nunito">
-                        We provide comprehensive travel services to make your journey to Turkmenistan seamless and
-                        memorable
+                        {t('text')}
                     </p>
                 </div>
             </div>
@@ -28,16 +30,15 @@ export default function Services() {
                                 width={1020} height={500} className="w-full h-full" />
                             </div>
                             <div className="p-6">
-                                <h3 className="text-2xl font-bold mb-3 font-raleway">FLight</h3>
+                                <h3 className="text-2xl font-bold mb-3 font-raleway">{t('flight-title')}</h3>
                                 <p className="text-gray-600 mb-4 font-nunito">
-                                    Book affordable flights to Turkmenistan with major airlines. We offer competitive
-                                    prices and flexible dates.
+                                    {t('flight-text')}
                                 </p>
                                 <Link
                                     href="/services/flights"
                                     className="inline-block main-background text-white px-6 py-2 rounded-full font-raleway"
                                 >
-                                    Learn More
+                                    {m('view')}
                                 </Link>
                             </div>
                         </div>
@@ -49,16 +50,15 @@ export default function Services() {
                                        width={1020} height={500} className="w-full h-full" />
                             </div>
                             <div className="p-6">
-                                <h3 className="text-2xl font-bold mb-3 font-raleway">Hotels</h3>
+                                <h3 className="text-2xl font-bold mb-3 font-raleway">{t('hotel-title')}</h3>
                                 <p className="text-gray-600 mb-4 font-nunito">
-                                    Choose from a wide range of hotels in Ashgabat and other cities. From luxury to
-                                    budget-friendly options.
+                                    {t('hotel-text')}
                                 </p>
                                 <Link
                                     href="/services/hotels"
                                     className="inline-block main-background text-white px-6 py-2 rounded-full font-raleway"
                                 >
-                                    Learn More
+                                    {m('view')}
                                 </Link>
                             </div>
                         </div>
@@ -70,16 +70,15 @@ export default function Services() {
                                        width={1020} height={500} className="w-full h-full"/>
                             </div>
                             <div className="p-6">
-                                <h3 className="text-2xl font-bold mb-3 font-raleway">Visa</h3>
+                                <h3 className="text-2xl font-bold mb-3 font-raleway">{t('visa-title')}</h3>
                                 <p className="text-gray-600 mb-4 font-nunito">
-                                    Hassle-free visa assistance for Turkmenistan. We'll guide you through the
-                                    application process.
+                                    {t('visa-text')}
                                 </p>
                                 <Link
                                     href="/services/visas"
                                     className="inline-block main-background text-white px-6 py-2 rounded-full font-raleway"
                                 >
-                                    Learn More
+                                    {m('view')}
                                 </Link>
                             </div>
                         </div>

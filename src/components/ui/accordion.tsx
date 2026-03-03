@@ -21,16 +21,16 @@ export default function RouteAccordion({ data }: RouteAccordionProps) {
     };
 
     return (
-        <div className="w-full min-w-3xl mx-auto bg-white rounded-2xl shadow-md divide-y divide-gray-200">
+        <div className="w-full mx-auto bg-white rounded-2xl shadow-md divide-y divide-gray-200 my-4">
             {data.map((item, index) => (
                 <div key={item.id}>
                     <button
                         onClick={() => toggle(index)}
-                        className="flex justify-between items-center w-full px-6 py-4 text-left font-semibold text-gray-800 hover:text-[#A40000] transition-colors"
+                        className="flex justify-between items-center w-full px-6 py-4 text-left font-semibold text-gray-800 hover:text-[#2A4393] transition-colors cursor-pointer"
                     >
                         <span className="text-lg sm:text-xl">{item.title}</span>
                         {openIndex === index ? (
-                            <ChevronUp className="w-5 h-5 text-[#A40000] transition-transform duration-200" />
+                            <ChevronUp className="w-5 h-5 text-[#2A4393] transition-transform duration-200" />
                         ) : (
                             <ChevronDown className="w-5 h-5 text-gray-500 transition-transform duration-200" />
                         )}

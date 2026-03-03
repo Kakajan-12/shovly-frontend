@@ -5,13 +5,16 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Autoplay, Pagination } from "swiper/modules";
-import {useLocale} from "next-intl";
+import {useLocale, useTranslations} from "next-intl";
+import {Link} from "@/i18n/navigation";
 
 const Main = () => {
     const [slides, setSlides] = useState<any[]>([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
     const locale = useLocale();
+
+    const t = useTranslations("Tours");
 
     useEffect(() => {
         const fetchSlides = async () => {
@@ -72,6 +75,12 @@ const Main = () => {
                                 <p className="mt-4 text-lg md:text-2xl drop-shadow-md">
                                     {stripHtml(getLocalized(slide, "text"))}
                                 </p>
+                                <Link
+                                    href={`/${locale}/tours/${slide.tour_id}`}
+                                    className="inline-block mt-6 px-12 py-3 lang-bg text-white font-semibold rounded-full shadow-lg"
+                                >
+                                    {t('view')}
+                                </Link>
                             </div>
                         </div>
                     </SwiperSlide>

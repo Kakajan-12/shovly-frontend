@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
 import { IoLocationOutline } from "react-icons/io5";
 import { MdOutlineAlternateEmail } from "react-icons/md";
+import {FaPhone} from "react-icons/fa";
 
 interface Location {
     id: number;
@@ -111,13 +112,11 @@ const ContactDetails = () => {
         return <div className="text-center py-20 text-gray-600">No contact data available</div>;
 
     const active = data[activeIndex];
-    const mapSrcMatch = active?.iframe?.match(/src="([^"]+)"/);
-    const mapSrc = mapSrcMatch ? mapSrcMatch[1] : '';
 
     return (
-        <div className="w-full py-12">
-            <div className="flex flex-col lg:flex-row justify-center gap-10 max-w-7xl mx-auto px-4">
-                <div className="w-full lg:w-1/2 space-y-10">
+        <div className="w-full py-12 lg:py-0 relative z-50">
+            <div className="flex flex-col justify-center gap-10 max-w-7xl mx-auto px-4">
+                <div className="w-full space-y-10">
                     <div className="flex flex-wrap gap-3">
                         {data.map((loc, idx) => (
                             <button
@@ -125,65 +124,66 @@ const ContactDetails = () => {
                                 onClick={() => setActiveIndex(idx)}
                                 className={`flex-1 px-4 py-2 rounded-xl border text-center text-lg transition-all font-bold focus:outline-none cursor-pointer ${
                                     activeIndex === idx
-                                        ? 'bg-[#A40000] text-white border-[#A40000]'
-                                        : 'bg-white text-[#A40000] border-[#A40000] hover:bg-[#ffe5e5]'
+                                        ? 'lang-bg text-white border-[#3E74B4]'
+                                        : 'bg-white text-blue-900 border-blue-900'
                                 }`}
                             >
                                 {stripHTML(loc.location?.[getLangKey('location')] || '')}
                             </button>
                         ))}
                     </div>
-
-                    {mapSrc && (
-                        <iframe
-                            src={mapSrc}
-                            className="w-full h-72 rounded-lg shadow-md"
-                            style={{ border: 0 }}
-                            allowFullScreen
-                            loading="lazy"
-                            referrerPolicy="no-referrer-when-downgrade"
-                        />
-                    )}
                 </div>
 
-                <div className="w-full lg:w-1/2 space-y-4">
+                <div className="w-full space-y-4">
                     <div className="flex items-start justify-start gap-4">
-                        <div className="hidden sm:flex justify-center items-center rounded-full main-background w-18 h-18">
+                        <div className="hidden sm:flex justify-center items-center rounded-full lang-bg w-18 h-18">
                             <IoLocationOutline className="text-white" size={38}/>
                         </div>
                         <div className="flex flex-col gap-2">
-                            <p className="text-xl font-semibold">
-                                {stripHTML(active?.address?.[getLangKey('address')] || '')}
-                            </p>
+                            <p className="text-xl lg:text-2xl font-semibold">{t('address')}</p>
                             <div className="flex flex-col gap-1">
-                                {active?.numbers?.map((phone, idx) => (
-                                    <a
-                                        key={idx}
-                                        href={`tel:${phone}`}
-                                        className="text-lg"
-                                    >
-                                        {phone}
-                                    </a>
-                                ))}
+                                <p className="text-lg lg:text-xl">
+                                    {stripHTML(active?.address?.[getLangKey('address')] || '')}
+                                </p>
                             </div>
                         </div>
                     </div>
 
                     <div className="flex items-start justify-start gap-4">
                         <div
-                            className="hidden sm:flex justify-center items-center rounded-full main-background w-18 h-18">
+                            className="hidden sm:flex justify-center items-center rounded-full lang-bg w-18 h-18">
                             <MdOutlineAlternateEmail className="text-white" size={38}/>
                         </div>
                         <div className="flex flex-col gap-2">
-                            <p className="text-2xl font-semibold">{t('email')}</p>
+                            <p className="text-xl lg:text-2xl font-semibold">{t('email')}</p>
                             <div className="flex flex-col gap-1">
                                 {active?.mail?.map((mail, idx) => (
                                     <a
                                         key={idx}
                                         href={`mailto:${mail}`}
-                                        className="text-lg"
+                                        className="text-lg lg:text-xl"
                                     >
                                         {mail}
+                                    </a>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                    <div className="flex items-start justify-start gap-4">
+                        <div
+                            className="hidden sm:flex justify-center items-center rounded-full lang-bg w-18 h-18">
+                            <FaPhone className="text-white" size={30}/>
+                        </div>
+                        <div className="flex flex-col gap-2">
+                            <p className="text-xl lg:text-2xl font-semibold">{t('number')}</p>
+                            <div className="flex flex-col gap-1">
+                                {active?.numbers?.map((phone, idx) => (
+                                    <a
+                                        key={idx}
+                                        href={`tel:${phone}`}
+                                        className="text-lg lg:text-xl"
+                                    >
+                                        {phone}
                                     </a>
                                 ))}
                             </div>

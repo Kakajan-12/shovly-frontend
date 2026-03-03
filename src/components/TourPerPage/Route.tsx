@@ -64,8 +64,8 @@ export default function Route({tour}: RouteProps) {
             className="container mx-auto px-4">
             <div
                 className="flex flex-col overflow-hidden bg-[url('/mobile-map.webp')] bg-no-repeat bg-contain bg-right">
-                <div className="w-fit scrollbar-hide">
-                    <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-red-800 mb-6 text-left">
+                <div className="scrollbar-hide">
+                    <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-blue-900 mb-6 text-left">
                         {t("tours-route")}
                     </h2>
                     <RouteAccordion data={accordionData} />

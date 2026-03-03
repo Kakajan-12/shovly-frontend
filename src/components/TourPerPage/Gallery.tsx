@@ -64,9 +64,9 @@ const Gallery: React.FC<GalleryProps> = ({ tour }) => {
     }
 
     return (
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 my-8">
             <div className="flex flex-col">
-                <h3 className="text-[#A40000] text-3xl md:text-5xl font-semibold">
+                <h3 className="text-blue-900 text-3xl md:text-5xl font-semibold">
                     {t("gallery")}
                 </h3>
 

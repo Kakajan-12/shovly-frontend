@@ -6,7 +6,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { Autoplay, Pagination } from "swiper/modules";
 import {useLocale, useTranslations} from "next-intl";
-import {Link} from "@/i18n/navigation";
+import Link from "next/link";
 
 const Main = () => {
     const [slides, setSlides] = useState<any[]>([]);

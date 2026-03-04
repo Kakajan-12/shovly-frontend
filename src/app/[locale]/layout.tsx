@@ -28,26 +28,30 @@ export const metadata: Metadata = {
     }
 };
 
+import { getMessages } from "next-intl/server";
+
 export default async function RootLayout({
                                              children,
                                              params,
-                                         }: Readonly<{
+                                         }: {
     children: React.ReactNode;
     params: Promise<{ locale: string }>;
-}>) {
-    const {locale} = await params;
+}) {
+    const { locale } = await params;
+
     if (!hasLocale(routing.locales, locale)) {
         notFound();
     }
+
+    const messages = await getMessages();
+
     return (
         <html lang={locale}>
-        <body
-            className={`${raleway.variable} ${nunito.variable} antialiased`}
-        >
-        <NextIntlClientProvider>
-            <Header/>
+        <body className={`${raleway.variable} ${nunito.variable} antialiased`}>
+        <NextIntlClientProvider locale={locale} messages={messages}>
+            <Header />
             {children}
-            <Footer/>
+            <Footer />
         </NextIntlClientProvider>
         </body>
         </html>

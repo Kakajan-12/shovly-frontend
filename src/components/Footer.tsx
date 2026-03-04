@@ -176,7 +176,7 @@ const Footer = () => {
                             <li><Link href="/tours" className="text-sm hover:underline">{h("tours")}</Link></li>
                             <li><Link href="/about" className="text-sm hover:underline">{h("about")}</Link></li>
                             <li><Link href="/faq" className="text-sm hover:underline">FAQ</Link></li>
-                            <li><Link href="/contact" className="text-sm hover:underline">{h("contacts")}</Link></li>
+                            <li><Link href="/contacts" className="text-sm hover:underline">{h("contacts")}</Link></li>
                         </ul>
                     </div>
 

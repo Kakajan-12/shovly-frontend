@@ -14,9 +14,13 @@ const Header = () => {
     const [isLangOpen, setIsLangOpen] = useState(false);
 
     const locales = [
-        { code: 'en', label: 'EN' },
-        { code: 'ru', label: 'RU' },
-        { code: 'tk', label: 'TM' },
+        { code: 'en', label: 'EN', flag: '🇬🇧' },
+        { code: 'ru', label: 'RU', flag: '🇷🇺' },
+        { code: 'tk', label: 'TM', flag: '🇹🇲' },
+        { code: 'ar', label: 'AR', flag: '🇸🇦' },
+        { code: 'ja', label: 'JA', flag: '🇯🇵' },
+        { code: 'ko', label: 'KO', flag: '🇰🇷' },
+        { code: 'zh', label: 'ZH', flag: '🇨🇳' },
     ];
 
     const getLocalizedPath = (newLocale: string) => {
@@ -65,13 +69,13 @@ const Header = () => {
                     <div className="font-raleway">
                         <button
                             onClick={() => setIsLangOpen(!isLangOpen)}
-                            className="text-white cursor-pointer font-medium lang-bg rounded-bl-md rounded-br-md p-2 h-full w-12"
+                            className="text-white cursor-pointer font-medium lang-bg rounded-bl-md rounded-br-md p-2 h-full w-12 text-2xl"
                         >
-                            {locales.find((l) => l.code === locale)?.label}
+                            {locales.find((l) => l.code === locale)?.flag}
                         </button>
 
                         {isLangOpen && (
-                            <div className="absolute right-0 mt-1 w-12 bg-white shadow-lg rounded-md border z-50">
+                            <div className="absolute right-0 mt-1 w-14 bg-white shadow-lg rounded-md border z-50">
                                 {locales
                                     .filter((l) => l.code !== locale)
                                     .map((l) => (
@@ -80,9 +84,9 @@ const Header = () => {
                                             href={getLocalizedPath(l.code)}
                                             scroll={false}
                                             onClick={() => setIsLangOpen(false)}
-                                            className="block px-3 py-2 hover:bg-[#3E74B4] hover:text-white text-sm"
+                                            className="block px-3 py-2 hover:bg-[#3E74B4] text-2xl text-center"
                                         >
-                                            {l.label}
+                                            {l.flag}
                                         </Link>
                                     ))}
                             </div>
@@ -133,7 +137,7 @@ const Header = () => {
                         {t('contacts')}
                     </Link>
 
-                    <div className="flex justify-center space-x-3 border-t pt-3">
+                    <div className="flex flex-wrap justify-center gap-3 border-t pt-3 px-4">
                         {locales.map((l) => (
                             <Link
                                 key={l.code}
@@ -141,10 +145,10 @@ const Header = () => {
                                 onClick={() => setIsMenuOpen(false)}
                             >
                                 <div
-                                    className={`font-raleway px-2 py-1 rounded 
-                    ${l.code === locale ? 'lang-bg text-white' : ''}`}
+                                    className={`font-raleway px-3 py-2 rounded text-2xl
+                    ${l.code === locale ? 'lang-bg' : 'bg-gray-100'}`}
                                 >
-                                    {l.label}
+                                    {l.flag}
                                 </div>
                             </Link>
                         ))}

@@ -1,57 +1,55 @@
 {
   "Header": {
     "main": "Baş sahypa",
-    "tours": "Syýahatlar",
-    "blogs": "Blog",
-    "about": "Biz barada",
+    "tours": "Turlar",
+    "blogs": "Bloglar",
+    "about": "Biz hakda",
     "services": "Hyzmatlar",
-    "faq": "FAQ",
-    "contacts": "Kontaklar"
+    "faq": "Soraglar",
+    "contacts": "Habarlaşmak"
   },
   "About": {
-    "about-main-text": "Biz syýahatlaryňyzy ýönekeý, rahat we ýatdan çykmajak etmäge bagyşlanan syýahatçylyk agentligi. Maksadymyz syýahatyňyzyň her bir jikme-jikligine üns bermekdir, şonuň üçin siz hakykatdanam möhüm zatlara - täze ýerleri açmaga we tejribeden lezzet almaga üns berip bilersiňiz.\n\nBiz syýahat hyzmatlarynyň doly toplumyny hödürleýäris, şol sanda uçar biletlerini bronlamak, myhmanhana bronlamak, wiza kömegi we üns bilen saýlanan syýahatlar.",
-    "up-text": "Adaty bolmadyk zatlary duýmak ukyby",
-    "up-title": "Diňe bir menzil däl - has çuňňur syýahat.",
-    "down-text": "Biz ýatdan çykmajak syýahatlary we manyly syýahat tejribelerini döretmäge bagyşlanan syýahatçylyk agentligi. Dünýäniň dürli künjeklerindäki ýerleri çuňňur düşünmek bilen, müşderilerimiziň gyzyklanmalaryny, durmuş ýörelgelerini we arzuwlaryny görkezýän ýöriteleşdirilen syýahatlara ýöriteleşýäris. Tejribeli syýahat hünärmenlerinden ybarat toparymyz uçuşlardan we ýerleşýän ýerlerden başlap, özboluşly gezelençlere we medeni tejribelere çenli her bir jikme-jikligi jikme-jik meýilleşdirýär. Siz dynç alyş üçin deňiz kenarynda dynç almagy, medeni başdan geçirmeleri, kaşaň dynç alyş ýerini ýa-da maşgala dynç alyşyny gözleýän bolsaňyz, biz syýahatyňyzy kemsiz we ylham beriji etmek üçin şu ýerde.",
-    "title": "Syýahatçylykda ygtybarly hyzmatdaşyňyz",
-    "text": "Biz siziň zerurlyklaryňyza laýyk gelýän ygtybarly, şahsylaşdyrylan syýahat çözgütlerini hödürleýäris. Jikme-jikliklere üns bermek we syýahata bolan höwes bilen, meýilnamalaşdyrmakdan başlap, ýatdan çykmajak tejribeleri döretmäge çenli her ädimde size ýoldaşlyk edýäris. Maksadymyz her syýahaty rahat, ylham beriji we hakykatdanam ýatda galyjy etmekdir."
+    "about-main-text": "\"Şowly Travel\" — Türkmenistan boýunça kabul ediji we ugradyjy syýahatçylyk operatory bolup, topar, ýekelikde we maşgala syýahatçylygy babatda hyzmatdaşlyk hödürleýär. Biz 2019-njy ýyldan bäri işleýäris, baş ofisimiz Türkmenistanyň paýtagty Aşgabatda ýerleşýär.",
+    "up-text": "Adatdan daşary zatlara üns beriň",
+    "up-title": "Diňe bir ýer däl — çuňňur syýahat",
+    "down-text": "Biz tutuş Türkmenistan boýunça syýahatçylary kabul etmek we hyzmat etmek babatda özara hyzmatdaşlyk we giň gerimli teklipleri hödürleýäris. Hyzmatlarymyz: myhmanhana bronlamak, transferler, gezelenç ugurlary we muzeý petekleri. Topar awtobuslary Türkmenistanyň ähli şäherlerinde we etraplarynda bütçäňize görä kabul edilýär we ýerleşdirilýär.",
+    "title": "Türkmenistanda ygtybarly syýahat hyzmatdaşyňyz",
+    "text": "\"Şowly Travel\" siziň islegleriňizi nazara alyp, ygtybarly we şahsylaşdyrylan syýahat çözgütlerini hödürleýär. Bäş ýyldan gowrak tejribe we Türkmenistany çuňňur bilmek bilen, biz sizi meýilleşdirmeden başlap tä ýatdan çykmajak duýgulara çenli her ädimde goldaýarys."
   },
   "Gallery": {
-    "gallery-title": "Ýatda galmaga mynasyp pursatlar",
-    "gallery-text": "Galereýamyzy öwreniň we hödürleýän ýatdan çykmajak tejribelerimize göz aýlaň. Ajaýyp peýzažlardan medeni başdan geçirmelere çenli, sizi garaşýan syýahatlara göz aýlaň we özüňizi her bir ýeriň merkezinde göz öňüne getiriň."
+    "gallery-title": "Ýatdan çykmajak pursatlar",
+    "gallery-text": "Galereamyzy aýlanyp görüň we hödürleýän ýatdan çykmajak tejribelerimize bir göz atyň. Ajaýyp tebigatdan medeni başdan geçirmelere çenli sizi garaşýan syýahatlary görüň."
   },
   "Tour": {
-    "main-title": "BIZIŇ SYÝAHATLARYMYZA GÖZ AÝLAŇ",
-    "main-text": "Indiki başdan geçirmeleriňiz size garaşýar! Eksklýuziw syýahatlarymyzy öwreniň we diňe size laýyk gelýän ajaýyp dynç alyşy saýlaň."
-
+    "main-title": "TURLARYMYZ BILEN TANYŞYŇ",
+    "main-text": "Indiki başdan geçirmeleriňiz garaşýar! Aýratyn turlarymyzy göz aýlaň we diňe size niýetlenen iň amatly syýahaty tapyň."
   },
   "Services": {
     "title": "Hyzmatlarymyz",
-    "text": "Biz size Türkmenistana syýahatyňyzyň rahat geçmegini we ýatda galyjy bolmagyny üpjün etmek üçin toplumlaýyn syýahat hyzmatlaryny hödürleýäris.",
-    "flight-title": "Uçuş",
-    "flight-text": "Esasy awiakompaniýalardan Türkmenistana elýeterli bahadan biletleri bronlaň. Biz bäsdeşlikli bahalary we çeýe seneleri hödürleýäris.",
-    "flight-main-title": "Awiakompaniýa biletlerini bronlamak has aňsatlaşdy.",
-    "flight-main-text": "Syýahat agentligimizde her bir syýahatçynyň isleglerine laýyk gelýän awiabilet bronlamak hyzmatlarynyň doly toplumyny hödürleýäris. Gysga iş saparyny, romantiki syýahaty ýa-da başdan geçirme syýahatyny meýilleşdirýän bolsaňyzam, iň gowy elýeterli uçuşlara elýeterliligiňizi kepillendirýäris. Býujet opsiýalaryndan başlap, ýokary hilli hyzmatlara çenli, biz ähli görnüşli syýahatçylara hyzmat edýäris. Toparymyz gönüden-göni, baglanyşyk we köp ugurly ugurlar ýaly giň uçuşlary hödürlemek üçin öňdebaryjy global awiakompaniýalar bilen hyzmatdaşlyk edýär. Biz dünýäniň iri şäherlerine, şeýle hem has uzak ýerlere uçuşlary hödürleýäris, bu bolsa syýahatyňyzy meýilleşdirýän wagtyňyz size çeýelik we saýlama mümkinçiligini berýär. Awiabilet bronlamagyň, esasanam bahalaryň we tertipleriň üýtgemegi bilen kyn bolup biljekdigini düşünýäris. Şonuň üçin syýahat boýunça hünärmenlerimiz size her ädimde kömek etmäge taýýar. Size iň amatly uçuş wagtyny, iň gowy bahalary we oturgyçlary täzelemek ýa-da goşlaryň sanynyň köpeldilmegi ýaly zerur bolup biljek islendik goşmaça hyzmatlary tapmaga kömek ederis. Mundan başga-da, agentligimiz syýahat meýilnamalaryňyz üýtgese, rahatlygy üpjün etmek üçin çeýe bronlama opsiýalaryny hödürlemäge çalyşýar. Şeýle hem, uçuşyňyzdan öň, uçuş wagtynda ýa-da uçuşyňyzdan soň ýüze çykyp biljek islendik soraglara doly goldaw berýäris, bu bolsa siziň rahat we kynçylyksyz syýahatyňyzy üpjün edýär.",
+    "text": "Türkmenistana syýahatyňyzy amatly we ýatdan çykmajak etmek üçin doly syýahat hyzmatlaryny hödürleýäris",
+    "flight-title": "Uçar petekleri",
+    "flight-text": "Esasy awiakompaniýalar arkaly Türkmenistana arzan uçar peteklerini sargyt ediň. Bäsdeşlik bahalar we çeýe seneler.",
+    "flight-main-title": "Uçar Bronlamak Ýeňil",
+    "flight-main-text": "Syýahatçylyk agentligimiz her bir syýahatçynyň isleglerini kanagatlandyrmak üçin doly uçar hyzmatlary toplumyny hödürleýär. Iş saparydygyna, romantik dynç alyşdygyna ýa-da başdan geçirimli syýahatdygyna garamazdan, size elýeterli iň oňat uçarlary hödürleýäris. Toparymyz öňdebaryjy halkara awiakompaniýalary bilen işleýär. Hünärmenlerimiz size iň amatly uçuş wagtlaryny, iň oňat bahalary we goşmaça hyzmatlary — oturgyç kämilleşdirmesi ýa-da artyk ýük rugsat namasy — tapmaga kömek eder.",
     "hotel-title": "Myhmanhanalar",
-    "hotel-text": "Aşgabadda we beýleki şäherlerde dürli myhmanhanalardan, kaşaňdan arzan bahaly wariantlara çenli saýlaň.",
-    "hotel-main-title": "Her sapar üçin üns bilen saýlanan myhmanhanalar",
-    "hotel-main-text": "Dünýäniň dürli künjeklerinde üns bilen saýlanan myhmanhanalarymyz bilen rahatlyk, stil we ýatdan çykmajak tejribeler dünýäsini açyň. Lýuks dynç alyş merkezlerinden we butik myhmanhanalardan başlap, maşgala üçin amatly wariantlara we býujete laýyk wariantlara çenli, biz size islendik syýahat görnüşi üçin iň gowy ýerleşýän ýeri tapmaga kömek ederis.",
+    "hotel-text": "Aşgabatda we beýleki şäherlerde giň myhmanhana saýlawyňyz bar. Lýuks myhmanhanalardan başlap bütçä laýyk wariantlara çenli.",
+    "hotel-main-title": "Her syýahat üçin seçilip alnan myhmanhanalar",
+    "hotel-main-text": "Dünýäniň dört künjündäki seçilip alnan myhmanhanalarymyz bilen rahatlygy we ýatdan çykmajak tejribäni açyň. Lýuks kurortlardan we butik myhmanhanalardan başlap maşgala we bütçe wariantlaryna çenli her syýahat üçin iň amatly ýaşaýyş ýerini tapmaga kömek edýäris.",
     "visa-title": "Wiza",
-    "visa-text": "Türkmenistan üçin kynçylyksyz wiza goldawy. Biz size ähli arza beriş prosesinde ýol görkezeris.",
-    "visa-main-title": "Wiza nädip almaly",
-    "visa-main-text": "Wiza almak hökman çylşyrymly proses bolmaly däl. Bu sahypada wiza üçin nädip ýüz tutmalydygyňyz we arzaňyzy dogry taýýarlamak üçin zerur bolan ädimler barada aýdyň görkezmeleri taparsyňyz."
+    "visa-text": "Türkmenistana wiza almakda kynçylyksyz kömek. Ýüz tutmak prosesinde ädim-ädim goldaw.",
+    "visa-main-title": "Wiza nähili alynýar",
+    "visa-main-text": "Wiza almak kyn bolmaly däl. Bu sahypada wiza arzasyny nädip bermeli we resminamalary dogry taýýarlamak üçin nähili ädimler gerek boljakdygy barada anyk görkezme taparsyňyz."
   },
   "Footer": {
-    "text": "Her daşy bir hekaýa, her çägesi bir başdan geçirme, her güni bir açyş bolan ýurtda yz galdyryň.",
-    "contacts": "Kontaktlar",
-    "quick-links": "Gysga geçişler",
-    "all-right-reserved": "Ähli hukuklar goralan"
+    "text": "Her daşy bir taryh, her dünesi bir başdan geçirme, her güni bir açyş bolan ýurtda yz galdyryň.",
+    "contacts": "Habarlaşmak",
+    "quick-links": "Çalt baglanyşyklar",
+    "all-right-reserved": "Ähli hukuklar goralandyr"
   },
-
   "WorkingHours": {
-    "title": "Iş wagty",
-    "working": "Işleýäris",
-    "notWorking": "Işlemeýäris",
+    "title": "Iş sagatlary",
+    "working": "Işleýär",
+    "notWorking": "Işlemeýär",
     "newYear": "Täze ýyl",
     "womensDay": "Halkara zenanlar güni",
     "novruz": "Nowruz baýramy",
@@ -59,49 +57,48 @@
     "independenceDay": "Türkmenistanyň Garaşsyzlyk güni",
     "neutralityDay": "Bitaraplyk güni"
   },
-
   "Weather": {
     "title": "Aşgabatda howa",
     "temperature": "Temperatura",
-    "description": "Beýany",
-    "sunny": "Güneşli",
-    "fetchError": "Howa maglumatlary ýüklenmedi",
+    "description": "Beýan",
+    "sunny": "Günli",
+    "fetchError": "Howa maglumatlary ýüklenip bilinmedi",
     "unavailable": "Howa maglumatlary elýeterli däl"
   },
-
   "Tours": {
-    "tours-title": "Biziň iň gowy gezelençlerimiz",
-    "tours-text": "Dünýäniň iň gözel burçlaryna rahatlyk bilen syýahat ediň. Gadymy şäherler, tebigy täsinlikler we ajaýyp medeni ugurlar - her bir gezelenç, tejribeli gollanmalar bilen bilelikde ýatdan çykmajak ýatlamalar üçin döredildi.",
-    "tours-price": "her adamdan",
-    "tours-booking": "Bronlamak",
-    "tours-route": "Syýahatyň ugurlary",
-    "tours-include": "Nämeler girýär",
-    "include": "Öz içine alýar",
-    "exclude": "Öz içine almaýar",
+    "tours-title": "Iň gowy turlarymyz",
+    "tours-text": "Dünýäniň iň gözel künjeklerine seresaplylyk bilen saýlanan syýahatlary açyň. Gadymy şäherler, tebigy geň-taňlyklar we özboluşly medeni ugurlar — her tur siziň üçin ýatdan çykmajak tejribe hödürlemek üçin taýýarlandy.",
+    "tours-price": "adam başyna",
+    "tours-price_ask": "Baha soraşdyrylmaly",
+    "tours-price_clarify": "Jemi baha saýlanan myhmanhana derejesine we goşmaça hyzmatlara baglydyr. Şahsy teklip üçin ofisimiz bilen habarlaşyň.",
+    "tours-price_contact": "Baha üçin ofis bilen habarlaşyň",
+    "tours-booking": "Tur bronlamak",
+    "tours-route": "Tur ugry",
+    "tours-include": "Goşulýar",
+    "include": "Goşulýar",
+    "exclude": "Goşulmaýar",
     "gallery": "Galereýa",
-    "view": "Syýahaty görüň"
+    "view": "Tury görmek"
   },
-
-
   "Contacts": {
-    "sub-title": "KONTAKT",
+    "sub-title": "HABARLAŞMAK",
     "title": "Biz bilen habarlaşyň",
-    "text": "Biz size kömek etmäge taýýar! Eger soraglaryňyz ýa-da bellikleriňiz bolsa, biziň bilen habarlaşmakdan çekinmäň.",
-    "name": "Adyňyz",
-    "surname": "Familiýaňyz",
-    "email": "Poçta",
-    "number": "Nomer",
-    "message": "Hatyňyz",
-    "send": "Ugratmak",
-    "address": "Salgymyz"
+    "text": "Kömek etmäge taýýar! Soraglaryňyz ýa-da pikirleriňiz bar bolsa, bize ýüz tutmakdan çekinmäň.",
+    "name": "At",
+    "surname": "Familýa",
+    "email": "Elektron poçta",
+    "number": "Telefon belgisi",
+    "message": "Habar",
+    "send": "Habar ibermek",
+    "address": "Salgy"
   },
   "Pagination": {
-    "next": "Öňe",
-    "prev": "Yza"
+    "next": "Indiki",
+    "prev": "Öňki"
   },
   "More": {
-    "read-more": "Giňişleýin",
-    "view": "Seretmek"
+    "read-more": "Dowamyny oka",
+    "view": "Görmek"
   },
   "Search": {
     "search": "Gözleg"

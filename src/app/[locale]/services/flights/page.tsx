@@ -183,7 +183,7 @@ export default function Flights(){
                                 {/* Large featured image */}
                                 <div className="col-span-2 relative h-80 rounded-3xl overflow-hidden group">
                                     <Image
-                                        src="/airport.webp"
+                                        src="/airlines/airport.webp"
                                         alt="Ashgabat International Airport"
                                         width={900}
                                         height={600}
@@ -199,7 +199,7 @@ export default function Flights(){
                                 {/* Two smaller images */}
                                 <div className="relative h-64 rounded-3xl overflow-hidden group">
                                     <Image
-                                        src="/airplane.webp"
+                                        src="/airlines/airplane.webp"
                                         alt="Aircraft"
                                         width={400}
                                         height={400}

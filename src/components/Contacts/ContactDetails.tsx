@@ -114,54 +114,83 @@ const ContactDetails = () => {
     const active = data[activeIndex];
 
     return (
-        <div className="w-full py-12 lg:py-0 relative z-50">
-            <div className="flex flex-col justify-center gap-10 max-w-7xl mx-auto px-4">
-                <div className="w-full space-y-10">
-                    <div className="flex flex-wrap gap-3">
-                        {data.map((loc, idx) => (
-                            <button
-                                key={loc.location?.id ?? idx}
-                                onClick={() => setActiveIndex(idx)}
-                                className={`flex-1 px-4 py-2 rounded-xl border text-center text-lg transition-all font-bold focus:outline-none cursor-pointer ${
-                                    activeIndex === idx
-                                        ? 'lang-bg text-white border-[#3E74B4]'
-                                        : 'bg-white text-blue-900 border-blue-900'
-                                }`}
-                            >
+        <div className="w-full sticky top-24">
+            {/* Section Header */}
+            <div className="mb-8">
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3 font-raleway">
+                    Contact Information
+                </h2>
+                <div className="w-20 h-1 rounded-full"
+                     style={{ background: 'linear-gradient(90deg, #C87941 0%, #E8B887 100%)' }}></div>
+            </div>
+
+            {/* Location Tabs */}
+            {data.length > 1 && (
+                <div className="mb-6 flex flex-col gap-3">
+                    {data.map((loc, idx) => (
+                        <button
+                            key={loc.location?.id ?? idx}
+                            onClick={() => setActiveIndex(idx)}
+                            className={`px-6 py-3 rounded-xl border-2 text-left font-medium transition-all duration-300 focus:outline-none font-raleway ${
+                                activeIndex === idx
+                                    ? 'text-white border-transparent shadow-lg'
+                                    : 'bg-white text-gray-700 border-gray-200 hover:border-[#2A4393] hover:shadow-md'
+                            }`}
+                            style={activeIndex === idx ? {
+                                background: 'linear-gradient(135deg, #2A4393 0%, #3E74B4 100%)'
+                            } : {}}
+                        >
+                            <div className="flex items-center gap-3">
+                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
                                 {stripHTML(loc.location?.[getLangKey('location')] || '')}
-                            </button>
-                        ))}
+                            </div>
+                        </button>
+                    ))}
+                </div>
+            )}
+
+            {/* Contact Cards */}
+            <div className="space-y-4">
+                {/* Address Card */}
+                <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300"
+                     style={{ boxShadow: '0 8px 24px rgba(42, 67, 147, 0.08)' }}>
+                    <div className="flex items-start gap-4">
+                        <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
+                             style={{ background: 'linear-gradient(135deg, #E8F4FF 0%, #D6EBFF 100%)' }}>
+                            <IoLocationOutline className="text-[#2A4393]" size={24}/>
+                        </div>
+                        <div className="flex-grow">
+                            <h3 className="text-sm font-bold text-gray-500 uppercase tracking-wider mb-2 font-raleway">
+                                {t('address')}
+                            </h3>
+                            <p className="text-gray-900 leading-relaxed font-nunito">
+                                {stripHTML(active?.address?.[getLangKey('address')] || '')}
+                            </p>
+                        </div>
                     </div>
                 </div>
 
-                <div className="w-full space-y-4">
-                    <div className="flex items-start justify-start gap-4">
-                        <div className="hidden sm:flex justify-center items-center rounded-full lang-bg w-18 h-18">
-                            <IoLocationOutline className="text-white" size={38}/>
+                {/* Email Card */}
+                <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300"
+                     style={{ boxShadow: '0 8px 24px rgba(200, 121, 65, 0.08)' }}>
+                    <div className="flex items-start gap-4">
+                        <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
+                             style={{ background: 'linear-gradient(135deg, #FFF5EE 0%, #FFE8D6 100%)' }}>
+                            <MdOutlineAlternateEmail className="text-[#C87941]" size={24}/>
                         </div>
-                        <div className="flex flex-col gap-2">
-                            <p className="text-xl lg:text-2xl font-semibold">{t('address')}</p>
-                            <div className="flex flex-col gap-1">
-                                <p className="text-lg lg:text-xl">
-                                    {stripHTML(active?.address?.[getLangKey('address')] || '')}
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="flex items-start justify-start gap-4">
-                        <div
-                            className="hidden sm:flex justify-center items-center rounded-full lang-bg w-18 h-18">
-                            <MdOutlineAlternateEmail className="text-white" size={38}/>
-                        </div>
-                        <div className="flex flex-col gap-2">
-                            <p className="text-xl lg:text-2xl font-semibold">{t('email')}</p>
-                            <div className="flex flex-col gap-1">
+                        <div className="flex-grow">
+                            <h3 className="text-sm font-bold text-gray-500 uppercase tracking-wider mb-2 font-raleway">
+                                {t('email')}
+                            </h3>
+                            <div className="space-y-1">
                                 {active?.mail?.map((mail, idx) => (
                                     <a
                                         key={idx}
                                         href={`mailto:${mail}`}
-                                        className="text-lg lg:text-xl"
+                                        className="block text-gray-900 hover:text-[#C87941] transition-colors font-nunito"
                                     >
                                         {mail}
                                     </a>
@@ -169,19 +198,26 @@ const ContactDetails = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="flex items-start justify-start gap-4">
-                        <div
-                            className="hidden sm:flex justify-center items-center rounded-full lang-bg w-18 h-18">
-                            <FaPhone className="text-white" size={30}/>
+                </div>
+
+                {/* Phone Card */}
+                <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300"
+                     style={{ boxShadow: '0 8px 24px rgba(42, 67, 147, 0.08)' }}>
+                    <div className="flex items-start gap-4">
+                        <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
+                             style={{ background: 'linear-gradient(135deg, #E8F4FF 0%, #D6EBFF 100%)' }}>
+                            <FaPhone className="text-[#2A4393]" size={20}/>
                         </div>
-                        <div className="flex flex-col gap-2">
-                            <p className="text-xl lg:text-2xl font-semibold">{t('number')}</p>
-                            <div className="flex flex-col gap-1">
+                        <div className="flex-grow">
+                            <h3 className="text-sm font-bold text-gray-500 uppercase tracking-wider mb-2 font-raleway">
+                                {t('number')}
+                            </h3>
+                            <div className="space-y-1">
                                 {active?.numbers?.map((phone, idx) => (
                                     <a
                                         key={idx}
                                         href={`tel:${phone}`}
-                                        className="text-lg lg:text-xl"
+                                        className="block text-gray-900 hover:text-[#2A4393] transition-colors font-nunito"
                                     >
                                         {phone}
                                     </a>
@@ -190,6 +226,37 @@ const ContactDetails = () => {
                         </div>
                     </div>
                 </div>
+            </div>
+
+            {/* Business Hours Card */}
+            <div className="mt-6 bg-gradient-to-br from-[#2A4393] to-[#3E74B4] rounded-2xl p-6 text-white">
+                <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
+                         style={{ background: 'rgba(255, 255, 255, 0.2)' }}>
+                        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 className="text-sm font-bold uppercase tracking-wider mb-2 opacity-90 font-raleway">
+                            Business Hours
+                        </h3>
+                        <div className="space-y-1 font-nunito">
+                            <p className="text-white/95">Monday - Friday: 9:00 AM - 6:00 PM</p>
+                            <p className="text-white/95">Saturday: 10:00 AM - 4:00 PM</p>
+                            <p className="text-white/95">Sunday: Closed</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {/* Response Time Banner */}
+            <div className="mt-6 bg-gradient-to-r from-[#C87941] to-[#E8B887] rounded-2xl p-6 text-white text-center">
+                <svg className="w-10 h-10 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+                <h4 className="font-bold text-lg mb-1 font-raleway">Quick Response Guarantee</h4>
+                <p className="text-white/90 text-sm font-nunito">We typically respond within 24 hours</p>
             </div>
         </div>
     );

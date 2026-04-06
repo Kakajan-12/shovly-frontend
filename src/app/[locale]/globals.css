@@ -14,7 +14,7 @@ a{
 }
 
 .swiper-pagination-bullet-active {
-    @apply !bg-white scale-150;
+    @apply !bg-white scale-50;
 }
 
 .font-raleway {

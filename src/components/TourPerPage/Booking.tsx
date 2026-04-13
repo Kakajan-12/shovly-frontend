@@ -37,72 +37,89 @@ const Booking = ({tour}: { tour: Tour }) => {
     const imageUrl = `${process.env.NEXT_PUBLIC_API_URL}/${tour.image.replace(/\\/g, "/")}`;
 
     return (
-        <div className="pt-10 xl:pt-20"
-             style={{
-                 backgroundImage: "url(/map.webp)",
-                 backgroundRepeat: "no-repeat",
-                 backgroundSize: "contain",
-                 backgroundPosition: "center right",
-             }}
-        >
-            <div className="container px-2 mx-auto">
-                <section className="flex flex-col-reverse lg:flex-row py-10 lg:space-x-4">
-                    <div
-                        className="flex flex-col lg:w-1/2 items-center lg:items-start"
-                    >
+        <div className="w-full bg-white">
+            <div className="container px-4 mx-auto mt-20 py-10">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+                    {/* Image Column */}
+                    <div className="flex flex-col">
                         <Image
                             src={imageUrl}
                             alt={title}
-                            width={400}
-                            height={400}
-                            className="w-full rounded-2xl object-cover shadow-lg"
+                            width={500}
+                            height={500}
+                            className="w-full aspect-square rounded-xl object-cover shadow-md"
+                            priority
                         />
                     </div>
 
-                    <div
-                        className="flex flex-col pt-10 w-full lg:w-1/2 space-y-6"
-                    >
-                        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#336B7B] mb-4">{title}</h2>
-                        {tour.price !== null && (
-                            <p className="ml-2 font-bold text-6xl">
-                                ${tour.price}{" "}
-                                <span className="font-normal text-lg">
-                                    {t("tours-price")}
-                                </span>
+                    {/* Content Column */}
+                    <div className="flex flex-col space-y-8">
+                        <div>
+                            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 leading-tight">
+                                {title}
+                            </h1>
+                            <p className="text-gray-600 text-lg leading-relaxed">
+                                {text}
                             </p>
-                        )
-                        }
+                        </div>
 
-                        <div className="w-full space-y-2">
-                            <div className="bg-[#FFFCFC] py-5 px-4 rounded-xl shadow-md space-y-2">
-                                <p>
-                                    <FaRegMap color="#2A4393" className="inline mr-2"/>
+                        {/* Price */}
+                        <div className="border-t border-b border-gray-200 py-6">
+                            {tour.price && tour.price > 0 ? (
+                                <div>
+                                    <p className="text-gray-600 text-sm uppercase tracking-wide mb-2">{t("price-per-person")}</p>
+                                    <p className="text-5xl md:text-6xl font-bold text-gray-900">
+                                        ${tour.price}
+                                    </p>
+                                </div>
+                            ) : (
+                                <p className="text-2xl font-semibold text-[#C87941]">
+                                    {t("tours-price_contact")}
+                                </p>
+                            )}
+                        </div>
+
+                        {/* Tour Details Grid */}
+                        <div className="grid grid-cols-2 gap-6">
+                            <div>
+                                <p className="text-gray-600 text-sm uppercase tracking-wide mb-2 flex items-center gap-2">
+                                    <FaRegMap color="#336B7B" size={16}/>
+                                    {t("destination")}
+                                </p>
+                                <p className="text-lg font-semibold text-gray-900">
                                     {destination}
                                 </p>
-                                <p>
-                                    <MdOutlineAccessTime color="#2A4393" className="inline mr-2"/>
-                                    {duration}{" "}
-                                    {lang === "ru"
-                                        ? "дня"
-                                        : lang === "tk"
-                                            ? "gün"
-                                            : "days"}
+                            </div>
+                            <div>
+                                <p className="text-gray-600 text-sm uppercase tracking-wide mb-2 flex items-center gap-2">
+                                    <MdOutlineAccessTime color="#336B7B" size={16}/>
+                                    {t("duration")}
                                 </p>
-
-                                <p>
-                                    <HiTranslate color="#2A4393" className="inline mr-2"/>
+                                <p className="text-lg font-semibold text-gray-900">
+                                    {duration} {t('days')}
+                                </p>
+                            </div>
+                            <div>
+                                <p className="text-gray-600 text-sm uppercase tracking-wide mb-2 flex items-center gap-2">
+                                    <HiTranslate color="#336B7B" size={16}/>
+                                    {t("language")}
+                                </p>
+                                <p className="text-lg font-semibold text-gray-900">
                                     {language}
                                 </p>
-                                <p>
-                                    <VscTypeHierarchySub color="#2A4393" className="inline mr-2"/>
+                            </div>
+                            <div>
+                                <p className="text-gray-600 text-sm uppercase tracking-wide mb-2 flex items-center gap-2">
+                                    <VscTypeHierarchySub color="#336B7B" size={16}/>
+                                    {t("tour-type")}
+                                </p>
+                                <p className="text-lg font-semibold text-gray-900">
                                     {type}
                                 </p>
-                                <p className="mt-6 leading-relaxed text-lg text-gray-700">{text}</p>
                             </div>
-
                         </div>
                     </div>
-                </section>
+                </div>
             </div>
         </div>
     );

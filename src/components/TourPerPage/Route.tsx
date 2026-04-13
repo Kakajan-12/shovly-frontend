@@ -34,7 +34,7 @@ export default function Route({tour}: RouteProps) {
             try {
                 setLoading(true);
                 const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/itinerary`);
-                if (!res.ok) throw new Error("Ошибка загрузки данных");
+                if (!res.ok) throw new Error(t('error-loading-data'));
                 const result: Itinerary[] = await res.json();
                 setData(result.filter((item) => item.tour_id === tour.id));
             } catch (err: any) {
@@ -60,18 +60,19 @@ export default function Route({tour}: RouteProps) {
     }));
 
     return (
-        <div
-            className="container mx-auto px-4">
-            <div
-                className="flex flex-col overflow-hidden bg-[url('/mobile-map.webp')] bg-no-repeat bg-contain bg-right">
-                <div className="scrollbar-hide">
-                    <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-blue-900 mb-6 text-left">
+        <div className="w-full bg-gradient-to-b from-white to-gray-50 py-5">
+            <div className="container mx-auto px-4">
+                <div className="flex flex-col mb-10">
+                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-2">
                         {t("tours-route")}
                     </h2>
+                    <p className="text-gray-600 text-lg">{t("itinerary-subtitle")}</p>
+                    <div className="w-16 h-1 bg-gradient-to-r from-[#336B7B] to-[#C87941] mt-4"></div>
+                </div>
+                <div className="scrollbar-hide">
                     <RouteAccordion data={accordionData} />
                 </div>
             </div>
-
         </div>
     );
 }

@@ -106,10 +106,10 @@ const ContactDetails = () => {
         fetchData();
     }, []);
 
-    if (loading) return <div className="text-center py-20 text-gray-600">Loading...</div>;
+    if (loading) return <div className="text-center py-20 text-gray-600">{t('loading')}</div>;
     if (error) return <div className="text-center py-20 text-red-600">{error}</div>;
     if (!data.length)
-        return <div className="text-center py-20 text-gray-600">No contact data available</div>;
+        return <div className="text-center py-20 text-gray-600">{t('no-data')}</div>;
 
     const active = data[activeIndex];
 
@@ -118,7 +118,7 @@ const ContactDetails = () => {
             {/* Section Header */}
             <div className="mb-8">
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3 font-raleway">
-                    Contact Information
+                    {t('contact-info')}
                 </h2>
                 <div className="w-20 h-1 rounded-full"
                      style={{ background: 'linear-gradient(90deg, #C87941 0%, #E8B887 100%)' }}></div>
@@ -239,12 +239,12 @@ const ContactDetails = () => {
                     </div>
                     <div>
                         <h3 className="text-sm font-bold uppercase tracking-wider mb-2 opacity-90 font-raleway">
-                            Business Hours
+                            {t('business-hours')}
                         </h3>
                         <div className="space-y-1 font-nunito">
-                            <p className="text-white/95">Monday - Friday: 9:00 AM - 6:00 PM</p>
-                            <p className="text-white/95">Saturday: 10:00 AM - 4:00 PM</p>
-                            <p className="text-white/95">Sunday: Closed</p>
+                            <p className="text-white/95">{t('hours-weekday')}</p>
+                            <p className="text-white/95">{t('hours-saturday')}</p>
+                            <p className="text-white/95">{t('hours-sunday')}</p>
                         </div>
                     </div>
                 </div>
@@ -255,8 +255,8 @@ const ContactDetails = () => {
                 <svg className="w-10 h-10 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
-                <h4 className="font-bold text-lg mb-1 font-raleway">Quick Response Guarantee</h4>
-                <p className="text-white/90 text-sm font-nunito">We typically respond within 24 hours</p>
+                <h4 className="font-bold text-lg mb-1 font-raleway">{t('quick-response')}</h4>
+                <p className="text-white/90 text-sm font-nunito">{t('response-time')}</p>
             </div>
         </div>
     );

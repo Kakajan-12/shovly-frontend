@@ -2,7 +2,7 @@
 
 import { useEffect, useState, useRef } from "react";
 import { useParams } from "next/navigation";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { Blog } from "@/types/blog";
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
@@ -18,6 +18,7 @@ import Image from "next/image";
 const BlogDetail = () => {
     const { id } = useParams();
     const lang = useLocale();
+    const t = useTranslations('BlogDetail');
     const zoomRef = useRef(null);
     const captionsRef = useRef(null);
     const heroRef = useRef(null);
@@ -59,10 +60,10 @@ const BlogDetail = () => {
 
     if (loading) {
         return (
-            <div className="min-h-screen flex items-center justify-center">
+            <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-white to-gray-50">
                 <div className="text-center">
-                    <div className="w-16 h-16 border-4 border-[#C87941] border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-                    <p className="text-gray-600 font-nunito">Loading article...</p>
+                    <div className="w-16 h-16 border-4 border-[#C87941] border-t-transparent rounded-full animate-spin mx-auto mb-6"></div>
+                    <p className="text-gray-600 font-nunito text-lg">{t('loading')}</p>
                 </div>
             </div>
         );
@@ -70,9 +71,16 @@ const BlogDetail = () => {
 
     if (!blog) {
         return (
-            <div className="min-h-screen flex items-center justify-center">
-                <div className="text-center">
-                    <p className="text-gray-600 text-xl font-raleway">Article not found</p>
+            <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-50 to-white">
+                <div className="text-center max-w-md mx-auto px-4">
+                    <div className="w-20 h-20 rounded-full mx-auto mb-6 flex items-center justify-center"
+                         style={{ background: 'linear-gradient(135deg, #2A4393 0%, #3E74B4 100%)' }}>
+                        <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
+                    </div>
+                    <p className="text-gray-900 text-xl font-raleway font-bold mb-2">{t('not-found')}</p>
+                    <p className="text-gray-600 font-nunito">The article you're looking for doesn't exist.</p>
                 </div>
             </div>
         );
@@ -105,7 +113,7 @@ const BlogDetail = () => {
                     <div className="max-w-4xl">
                         <motion.div
                             initial={{ opacity: 0, y: 40 }}
-                            animate={heroInView ? { opacity: 1, y: 0 } : {}}
+                            animate={heroInView ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
                             transition={{ duration: 0.8 }}
                             className="space-y-6"
                         >
@@ -118,7 +126,7 @@ const BlogDetail = () => {
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
                                 </svg>
                                 <span className="text-white text-sm tracking-[0.2em] uppercase font-medium font-raleway">
-                                    Travel Story
+                                    {t('badge')}
                                 </span>
                             </div>
 
@@ -146,7 +154,7 @@ const BlogDetail = () => {
                 <div className="container mx-auto px-4 my-container">
                     <motion.div
                         initial={{ opacity: 0, y: 40 }}
-                        animate={contentInView ? { opacity: 1, y: 0 } : {}}
+                        animate={contentInView ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
                         className="max-w-4xl mx-auto"
                     >
@@ -173,17 +181,17 @@ const BlogDetail = () => {
                         <motion.div
                             ref={galleryRef}
                             initial={{ opacity: 0, y: 40 }}
-                            animate={galleryInView ? { opacity: 1, y: 0 } : {}}
+                            animate={galleryInView ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
                             transition={{ duration: 0.8 }}
                             className="max-w-6xl mx-auto"
                         >
                             {/* Section Header */}
                             <div className="text-center mb-12">
                                 <span className="text-[#C87941] text-sm tracking-[0.3em] uppercase font-medium font-raleway">
-                                    Photo Gallery
+                                    {t('gallery-label')}
                                 </span>
                                 <h2 className="text-3xl md:text-4xl font-bold mt-4 mb-6 text-gray-900 font-raleway">
-                                    Visual Journey
+                                    {t('gallery-title')}
                                 </h2>
                                 <div className="w-20 h-1 mx-auto rounded-full"
                                      style={{ background: 'linear-gradient(90deg, #C87941 0%, #E8B887 100%)' }}></div>
@@ -197,7 +205,7 @@ const BlogDetail = () => {
                                         <motion.div
                                             key={img.id}
                                             initial={{ opacity: 0, scale: 0.9 }}
-                                            animate={galleryInView ? { opacity: 1, scale: 1 } : {}}
+                                            animate={galleryInView ? { opacity: 1, scale: 1 } : { opacity: 1, scale: 1 }}
                                             transition={{ duration: 0.6, delay: index * 0.1 }}
                                             className="group relative h-80 rounded-3xl overflow-hidden cursor-pointer"
                                             onClick={() => setOpen(index)}

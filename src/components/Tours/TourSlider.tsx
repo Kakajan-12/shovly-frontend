@@ -16,6 +16,7 @@ type Tour = {
 export default function TourSlider({ tours }: { tours: Tour[] }) {
     const locale = useLocale();
     const m = useTranslations("More");
+    const t = useTranslations("Tours");
 
     const stripHtml = (html: string) =>
         html ? html.replace(/<[^>]+>/g, "") : "";
@@ -68,9 +69,13 @@ export default function TourSlider({ tours }: { tours: Tour[] }) {
                                 {stripHtml(getLocalized(tour, "duration"))}
                             </p>
 
-                            {tour.price && (
+                            {tour.price && tour.price > 0 ? (
                                 <p className="text-sm mb-4 opacity-90">
                                     ${tour.price}
+                                </p>
+                            ) : (
+                                <p className="text-sm mb-4 opacity-90 font-semibold">
+                                    {t("tours-price_contact")}
                                 </p>
                             )}
 

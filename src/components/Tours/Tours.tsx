@@ -20,6 +20,7 @@ interface ToursProps {
 const Tours: React.FC<ToursProps> = ({ tours, loading, currentPage, setCurrentPage, lang }) => {
     const t = useTranslations("Pagination")
     const tour = useTranslations("Tour")
+    const tours_trans = useTranslations("Tours")
     const [itemsPerPage] = useState(6);
     const topRef = useRef<HTMLDivElement | null>(null);
 
@@ -83,7 +84,7 @@ const Tours: React.FC<ToursProps> = ({ tours, loading, currentPage, setCurrentPa
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
                                     {/* Price Badge */}
-                                    {item.price && (
+                                    {item.price && item.price > 0 ? (
                                         <div className="absolute top-4 right-4 px-4 py-2 rounded-full font-bold text-white backdrop-blur-md font-raleway"
                                              style={{
                                                  background: 'linear-gradient(135deg, #C87941 0%, #E8B887 100%)',
@@ -93,6 +94,14 @@ const Tours: React.FC<ToursProps> = ({ tours, loading, currentPage, setCurrentPa
                                                 <PiCurrencyDollarBold className="text-lg"/>
                                                 {item.price}
                                             </span>
+                                        </div>
+                                    ) : (
+                                        <div className="absolute top-4 right-4 px-3 py-2 rounded-full text-xs font-bold text-white backdrop-blur-md font-raleway"
+                                             style={{
+                                                 background: 'linear-gradient(135deg, #336B7B 0%, #4A8FA3 100%)',
+                                                 boxShadow: '0 4px 16px rgba(51, 107, 123, 0.3)'
+                                             }}>
+                                            {tours_trans('tours-price_ask')}
                                         </div>
                                     )}
 

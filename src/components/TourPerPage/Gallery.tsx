@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 interface Tour {
@@ -32,7 +33,7 @@ const Gallery: React.FC<GalleryProps> = ({ tour }) => {
             try {
                 setLoading(true);
                 const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/tour-gallery`);
-                if (!res.ok) throw new Error("Ошибка загрузки галереи");
+                if (!res.ok) throw new Error(t('error-loading-gallery'));
 
                 const data: GalleryItem[] = await res.json();
                 setImages(data.filter(item => item.tour_id === tourId));
@@ -54,42 +55,58 @@ const Gallery: React.FC<GalleryProps> = ({ tour }) => {
         );
     }
 
-    if (error) return <div className="text-center text-red-500">{error}</div>;
-
-    if (!images.length) {
+    if (error) {
         return (
-            <div className="flex justify-center items-center h-40 text-gray-500">
+            <div className="container mx-auto px-4 my-8">
+                <div className="text-center text-red-500">
+                    <p className="font-raleway font-bold mb-2">{t('error-loading-gallery')}</p>
+                    <p className="font-nunito text-sm">{error}</p>
+                </div>
             </div>
         );
     }
 
-    return (
-        <div className="container mx-auto px-4 my-8">
-            <div className="flex flex-col">
-                <h3 className="text-blue-900 text-3xl md:text-5xl font-semibold">
-                    {t("gallery")}
-                </h3>
+    if (!images.length) {
+        return null;
+    }
 
-                <div className="w-full mx-auto py-6">
-                    <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4">
+    return (
+        <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true, margin: "-100px" }}
+            className="w-full bg-white py-12 md:py-16 lg:py-20"
+        >
+            <div className="container mx-auto px-4">
+                <div className="flex flex-col mb-10">
+                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-2">
+                        {t("gallery")}
+                    </h2>
+                    <div className="w-16 h-1 bg-gradient-to-r from-[#336B7B] to-[#C87941]"></div>
+                </div>
+
+                <div className="w-full">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                         {images.map((item, index) => (
                             <div
                                 key={index}
-                                className="mb-4 break-inside-avoid rounded-md overflow-hidden cursor-pointer"
+                                className="group relative overflow-hidden rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 aspect-square"
                             >
                                 <Image
                                     src={`${process.env.NEXT_PUBLIC_API_URL}/${item.image}`}
                                     alt={`gallery-${index}`}
                                     width={400}
                                     height={400}
-                                    className="rounded-lg w-full h-auto object-cover"
+                                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                                 />
+                                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
                             </div>
                         ))}
                     </div>
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 };
 

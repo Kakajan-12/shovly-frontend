@@ -30,7 +30,7 @@ const ContactForm = () => {
             const svg = await res.text();
             setCaptchaImage(svg);
         } catch {
-            setError('Failed to load captcha');
+            setError(t('failed-captcha'));
         }
     };
 
@@ -68,10 +68,10 @@ const ContactForm = () => {
                     setFormData((prev) => ({...prev, captchaText: ''}));
                     await loadCaptcha();
                 } else {
-                    setError(data.error || 'Failed to send message');
+                    setError(data.error || t('failed-send'));
                 }
             } else {
-                setSuccess('Message sent successfully!');
+                setSuccess(t('success-send'));
                 setFormData({
                     name: '',
                     surname: '',
@@ -84,7 +84,7 @@ const ContactForm = () => {
                 setTimeout(() => setSuccess(null), 5000);
             }
         } catch {
-            setError('Server error');
+            setError(t('server-error'));
         } finally {
             setSending(false);
         }
@@ -95,12 +95,12 @@ const ContactForm = () => {
             {/* Section Header */}
             <div className="mb-8">
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3 font-raleway">
-                    Send Us a Message
+                    {t('form-title')}
                 </h2>
                 <div className="w-20 h-1 rounded-full mb-4"
                      style={{ background: 'linear-gradient(90deg, #2A4393 0%, #3E74B4 100%)' }}></div>
                 <p className="text-gray-600 font-nunito">
-                    Fill out the form below and our team will get back to you within 24 hours
+                    {t('form-subtitle')}
                 </p>
             </div>
 
@@ -119,7 +119,7 @@ const ContactForm = () => {
                                 value={formData.name}
                                 onChange={handleChange}
                                 name="name"
-                                placeholder="John"
+                                placeholder={t('placeholder-name')}
                                 required
                                 className="w-full px-4 py-3 bg-gray-50 border-2 border-gray-200 rounded-xl focus:border-[#2A4393] focus:bg-white focus:outline-none transition-all font-nunito"
                             />
@@ -133,7 +133,7 @@ const ContactForm = () => {
                                 value={formData.surname}
                                 onChange={handleChange}
                                 name="surname"
-                                placeholder="Doe"
+                                placeholder={t('placeholder-surname')}
                                 required
                                 className="w-full px-4 py-3 bg-gray-50 border-2 border-gray-200 rounded-xl focus:border-[#2A4393] focus:bg-white focus:outline-none transition-all font-nunito"
                             />
@@ -151,7 +151,7 @@ const ContactForm = () => {
                                 value={formData.email}
                                 onChange={handleChange}
                                 name="email"
-                                placeholder="john@example.com"
+                                placeholder={t('placeholder-email')}
                                 required
                                 className="w-full px-4 py-3 bg-gray-50 border-2 border-gray-200 rounded-xl focus:border-[#2A4393] focus:bg-white focus:outline-none transition-all font-nunito"
                             />
@@ -165,7 +165,7 @@ const ContactForm = () => {
                                 value={formData.phone}
                                 onChange={handleChange}
                                 name="phone"
-                                placeholder="+1 234 567 8900"
+                                placeholder={t('placeholder-phone')}
                                 required
                                 className="w-full px-4 py-3 bg-gray-50 border-2 border-gray-200 rounded-xl focus:border-[#2A4393] focus:bg-white focus:outline-none transition-all font-nunito"
                             />
@@ -181,7 +181,7 @@ const ContactForm = () => {
                             value={formData.message}
                             onChange={handleChange}
                             name="message"
-                            placeholder="Tell us about your travel plans..."
+                            placeholder={t('placeholder-message')}
                             required
                             rows={6}
                             className="w-full px-4 py-3 bg-gray-50 border-2 border-gray-200 rounded-xl focus:border-[#2A4393] focus:bg-white focus:outline-none transition-all resize-none font-nunito"
@@ -191,7 +191,7 @@ const ContactForm = () => {
                     {/* Captcha Section */}
                     <div className="bg-gray-50 rounded-2xl p-6 space-y-4">
                         <label className="block text-sm font-medium text-gray-700 font-raleway">
-                            Security Check <span className="text-red-500">*</span>
+                            {t('security-check')} <span className="text-red-500">*</span>
                         </label>
                         <div className="flex flex-col sm:flex-row items-center gap-4">
                             <div className="bg-white p-3 rounded-xl border-2 border-gray-200"
@@ -201,7 +201,7 @@ const ContactForm = () => {
                                     name="captchaText"
                                     value={formData.captchaText}
                                     onChange={handleChange}
-                                    placeholder="Enter the characters above"
+                                    placeholder={t('captcha-placeholder')}
                                     className={`w-full px-4 py-3 bg-white border-2 rounded-xl focus:outline-none transition-all font-nunito ${
                                         captchaError ? 'border-red-500 focus:border-red-500' : 'border-gray-200 focus:border-[#2A4393]'
                                     }`}
@@ -215,7 +215,7 @@ const ContactForm = () => {
                                 type="button"
                                 onClick={loadCaptcha}
                                 className="p-3 rounded-xl bg-gray-100 hover:bg-gray-200 transition-colors"
-                                title="Refresh captcha"
+                                title={t('refresh-captcha')}
                             >
                                 <svg className="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
@@ -257,7 +257,7 @@ const ContactForm = () => {
                                     <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                                     <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                                 </svg>
-                                Sending...
+                                {t('sending')}
                             </>
                         ) : (
                             <>

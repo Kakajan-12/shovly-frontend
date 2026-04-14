@@ -17,7 +17,6 @@ const Main = () => {
     const [error, setError] = useState<string | null>(null);
     const [activeIndex, setActiveIndex] = useState(0);
     const locale = useLocale();
-
     const t = useTranslations("Tours");
 
     useEffect(() => {

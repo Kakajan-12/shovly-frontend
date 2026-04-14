@@ -4,12 +4,13 @@ import TourSlider from "@/components/Tours/TourSlider";
 async function getLatestTours() {
     const res = await fetch(
         `${process.env.NEXT_PUBLIC_API_URL}/api/tours`,
-        { cache: "no-store" } // или revalidate: 60
+        { cache: "no-store" }
     );
 
     const data = await res.json();
+    const tours = Array.isArray(data) ? data : [];
 
-    return data
+    return tours
         .sort((a: any, b: any) => b.id - a.id)
         .slice(0, 5);
 }
